@@ -61,4 +61,10 @@ Once the closed-set finished, we can move to evaluation (Fitting Known Classes a
 python evaluation.py --dataset kitti --DATA_PATH XXXXXXXXXX --OPEN_PATH XXXXXXXXXX --ckpt demo.pth
 ```
 
+After the code is executed, we will get the performance of S2CA and a picture showing the OOD score distribution of known classes and unknown classes.
+
+<p align="center">
+  <img src="figures/pdf.png" width="700">
+</p>
+
 
