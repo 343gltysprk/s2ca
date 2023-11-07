@@ -4,3 +4,7 @@ torchvision
 sklearn
 tensorboardX
 tensorboard
+numpy
+pandas
+matplotlib
+seaborn
