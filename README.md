@@ -2,7 +2,7 @@
 
 This repository is an implementation of S2CA framework, including code for data preprocessing, training and evaluation.
 <p align="center">
-  <img src="s2ca.png" width="700">
+  <img src="figures/s2ca.png" width="700">
 </p>
 
 ## Environments
