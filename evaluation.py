@@ -270,20 +270,17 @@ def main():
     detectors = {}
     detectors["ViM"] = ViM(model.features, d=64, w=model.linear3.weight, b=model.linear3.bias)
     
-    print(f"> Fitting {len(detectors)} detectors")
+    print(f"> Fitting Known Classes")
 
     for name, detector in detectors.items():
-        print(f"--> Fitting {name}")
         detector.fit(train_loader, device=device)
 
 
-
-    print('open set')
     results = []
 
     with torch.no_grad():
         for detector_name, detector in detectors.items():
-            print(f"> Evaluating {detector_name}")
+            print(f"> Evaluating Open Set Performance")
 
             metrics = OODMetrics()
             for x, y in ood_loader:
