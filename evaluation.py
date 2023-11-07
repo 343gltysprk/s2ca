@@ -112,7 +112,7 @@ def parse_option():
     parser.add_argument('--warm', action='store_true',
                         help='warm-up for large batch training')
 
-    parser.add_argument('--ckpt', type=str,help='path to pre-trained model')
+    parser.add_argument('--ckpt', type=str, default='demo.pth' ,help='path to pre-trained model')
     parser.add_argument('--dropout', type=float, default=0.5,
                         help='initial dropout rate')
     parser.add_argument('--emb_dims', type=int, default=1024, metavar='N',
@@ -316,13 +316,11 @@ def main():
         data = np.array(scores)
         data = (data - np.min(data)) / (np.max(data) - np.min(data))
         df = pd.DataFrame({'Normalized Score': data, 'Category': known})
-        df.to_csv(detector_name+'.csv',index=False)
-        print(detector_name)
         ax = sns.displot(data = df, x='Normalized Score', hue='Category', kde=True, stat="probability",common_norm=False,aspect=4/3)
         sns.move_legend(ax, "upper right")
         plt.xlabel('Normalized Score')
         plt.ylabel('Probability Density')
-        plt.savefig(detector_name+'.png',dpi=1200)
+        plt.savefig('Probability_Density.png',dpi=1200)
 
     
 if __name__ == '__main__':
