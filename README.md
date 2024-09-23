@@ -5,6 +5,9 @@ This repository is an implementation of S2CA framework, including code for data 
   <img src="figures/s2ca.png" width="700">
 </p>
 
+## CIFAR100 Evaluation
+Coming Soon
+
 ## Environments
 
 The code was developed with Python 3.9.13 and Pytorch 2.0.1. CUDA is required.
