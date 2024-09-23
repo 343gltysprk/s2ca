@@ -6,7 +6,7 @@ This repository is an implementation of S2CA framework, including code for data 
 </p>
 
 ## CIFAR100 Evaluation
-Coming Soon
+Code and Checkpoint Coming Soon
 
 ## Environments
 
