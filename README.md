@@ -6,14 +6,15 @@ This repository is an implementation of S2CA framework, including code for data 
 </p>
 
 ## CIFAR100 Evaluation
-Code and Checkpoint Coming Soon
 
-The codebase is modified from https://github.com/deeplearning-wisc/cider/tree/master
+We are actively working on improving the codebase for reproducibility and ease of use.
+
+The codebase is modified from [CIDER](https://github.com/deeplearning-wisc/cider/tree/master)
 
 To evaluate S2CA on OOD detection benchmarks
 
 ```
-cd kitti_pt.py cifar100benchmarks
+cd cifar100benchmarks
 ```
 
 ### Data Preparation
@@ -39,7 +40,6 @@ The directory structure looks like this:
 
 ```python
 datasets/
----CIFAR10/
 ---CIFAR100/
 ---small_OOD_dataset/
 ------dtd/
@@ -49,7 +49,25 @@ datasets/
 ------places365/
 ------SVHN/
 ```
+### Model evaluation
 
+The pretrained model is available at [here](https://huggingface.co/343GltySprk/s2ca/blob/main/checkpoint_50.pth.tar)
+
+Create a directory named `checkpoints/[ID_DATASET]` in the root directory of the project and put the downloaded checkpoints here.
+
+```
+checkpoints/
+---CIFAR-100/	 	
+------s2ca/
+------checkpoint_50.pth.tar
+
+```
+
+Then run:
+
+```
+sh scripts/eval_ckpt_cifar100.sh s2ca
+```
 
 ### Model training
 
