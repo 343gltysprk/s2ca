@@ -9,7 +9,7 @@ This repository is an implementation of S2CA framework, including code for data 
 
 We are actively working on improving the codebase for reproducibility and ease of use.
 
-The codebase is modified from [CIDER](https://github.com/deeplearning-wisc/cider/tree/master)
+The codebase is modified from [CIDER](https://github.com/deeplearning-wisc/cider/tree/master).
 
 To evaluate S2CA on OOD detection benchmarks
 
@@ -51,7 +51,7 @@ datasets/
 ```
 ### Model evaluation
 
-The pretrained model is available at [here](https://huggingface.co/343GltySprk/s2ca/blob/main/checkpoint_50.pth.tar)
+The pretrained model is available at [here](https://huggingface.co/343GltySprk/s2ca/blob/main/checkpoint_50.pth.tar).
 
 Create a directory named `checkpoints/[ID_DATASET]` in the root directory of the project and put the downloaded checkpoints here.
 
@@ -59,7 +59,7 @@ Create a directory named `checkpoints/[ID_DATASET]` in the root directory of the
 checkpoints/
 ---CIFAR-100/	 	
 ------s2ca/
-------checkpoint_50.pth.tar
+---------checkpoint_50.pth.tar
 
 ```
 
@@ -80,7 +80,7 @@ sh scripts/train_s2ca_cifar100.sh
 
 The code was developed with Python 3.9.13 and Pytorch 2.0.1. CUDA is required.
 
-Required packages are specified in [requirements.txt](requirements.txt)
+Required packages are specified in [requirements.txt](requirements.txt).
 
 Simply use the following command to install all the packages listed.
 ```
