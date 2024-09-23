@@ -8,6 +8,59 @@ This repository is an implementation of S2CA framework, including code for data 
 ## CIFAR100 Evaluation
 Code and Checkpoint Coming Soon
 
+The codebase is modified from https://github.com/deeplearning-wisc/cider/tree/master
+
+To evaluate S2CA on OOD detection benchmarks
+
+```
+cd kitti_pt.py cifar100benchmarks
+```
+
+### Data Preparation
+
+The default root directory for ID and OOD datasets is `datasets/`. We consider the following (in-distribution) datasets: CIFAR-10, CIFAR-100, and ImageNet-100. 
+
+**Small-scale OOD datasets** For small-scale ID (e.g. CIFAR-10), we use SVHN, Textures (dtd), Places365, LSUN-C (LSUN), LSUN-R (LSUN_resize), and iSUN. 
+
+OOD datasets can be downloaded via the following links (source: [ATOM](https://github.com/jfc43/informative-outlier-mining/blob/master/README.md)):
+
+* [SVHN](http://ufldl.stanford.edu/housenumbers/test_32x32.mat): download it and place it in the folder of `datasets/small_OOD_dataset/svhn`. Then run `python utils/select_svhn_data.py` to generate test subset.
+* [Textures](https://www.robots.ox.ac.uk/~vgg/data/dtd/download/dtd-r1.0.1.tar.gz): download it and place it in the folder of `datasets/small_OOD_dataset/dtd`.
+* [Places365](http://data.csail.mit.edu/places/places365/test_256.tar): download it and place it in the folder of `datasets/ood_datasets/places365/test_subset`. We randomly sample 10,000 images from the original test dataset. 
+* [LSUN](https://www.dropbox.com/s/fhtsw1m3qxlwj6h/LSUN.tar.gz): download it and place it in the folder of `datasets/small_OOD_dataset/LSUN`.
+* [LSUN-resize](https://www.dropbox.com/s/moqh2wh8696c3yl/LSUN_resize.tar.gz): download it and place it in the folder of `datasets/small_OOD_dataset/LSUN_resize`.
+* [iSUN](https://www.dropbox.com/s/ssz7qxfqae0cca5/iSUN.tar.gz): download it and place it in the folder of `datasets/small_OOD_dataset/iSUN`.
+
+For example, run the following commands in the **root** directory to download **LSUN-C**:
+```
+cd datasets/small_OOD_dataset
+wget https://www.dropbox.com/s/fhtsw1m3qxlwj6h/LSUN.tar.gz
+tar -xvzf LSUN.tar.gz
+```
+
+The directory structure looks like this:
+
+```python
+datasets/
+---CIFAR10/
+---CIFAR100/
+---small_OOD_dataset/
+------dtd/
+------iSUN/
+------LSUN/
+------LSUN_resize/
+------places365/
+------SVHN/
+```
+
+
+### Model training
+
+```
+sh scripts/train_s2ca_cifar100.sh
+```
+
+
 ## Environments
 
 The code was developed with Python 3.9.13 and Pytorch 2.0.1. CUDA is required.
